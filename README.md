@@ -1,7 +1,7 @@
 # pdfslicer
 simple tool for slicing pages out of pdfs to new pdfs
 
-create a pages.csv with pages numbers on lines, 1 per line
+create a pages.csv with page numbers on lines, 1 per line
 edit variables at the top of Makefile as required
 make
 
