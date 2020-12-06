@@ -1,9 +1,0 @@
-\documentclass[a4paper]{article}
-\usepackage{geometry}
-\geometry{landscape}
-
-\usepackage{pdfpages}
-\usepackage{pgffor}
-
-\begin{document}
-

@@ -18,13 +18,18 @@ SPLITBASE=${FILEBASE}_split_
 SPECSFILE=spec.csv
 SCRIPTFILE=extract_files.py
 MULTIFILE_SCRIPT=multifile.sh
+HEADERSCRIPT=gen_header.py
+HEADERSPEC=spec.json
 
 default: split latex join
+
+header:
+	python3 ${HEADERSCRIPT} --spec=${HEADERSPEC} --out=${HEADERFILE}
 
 split:
 	pdfseparate ${FILEBASE}.pdf ${SPLITBASE}%d.pdf
 
-latex:
+latex: header
 	touch ${OUTFILE}.tex
 	cat ${HEADERFILE} >> ${OUTFILE}.tex
 	./gen_latex.sh ${PAGESFILE} ${SPLITBASE} >> ${OUTFILE}.tex

@@ -8,3 +8,8 @@ make
 ## doing this as a loop
 an example of this as a single loop is in as_loop.tex. if the splits are _very_ large this may be necessary.
 
+# multirun
+
+this depends on two files:
+a csv with 2 columns: filenme, page. default spec.csv
+a json with the header setup spec.  default spec.json
