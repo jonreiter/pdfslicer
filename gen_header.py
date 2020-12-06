@@ -18,19 +18,19 @@ def main():
     documentclass = d.get('documentclass', 'article')
     geometry = d.get('geometry', 'landscape')
 
-    outtext = (
-        '\documentclass[' + papertype + ']{' + documentclass + '}\n' +
-        r'\usepackage{geometry}' + '\n' +
-        r'\geometry{' + geometry + '}\n' +
-        '\n' +
-        r'\usepackage{pdfpages}' + '\n' +
-        r'\usepackage{pgffor}' + '\n' +
-        '\n' +
-        r'\begin{document}' + '\n' +
-        '\n'
-    )
-    with open(args.out, 'w') as f:
-        f.write(outtext)
+    lines = []
+    lines.append(r"\documentclass[" + papertype + "]{" + documentclass + "}")
+    lines.append(r"\usepackage{geometry}")
+    lines.append(r"\geometry{" + geometry + "}")
+    lines.append("")
+    lines.append(r"\usepackage{pdfpages}")
+    lines.append(r"\usepackage{pgffor}")
+    lines.append("")
+    lines.append(r"\begin{document}")
+    lines.append("")
+
+    with open(args.out, "w") as f:
+        f.write("\n".join(lines))
 
 main()
 
