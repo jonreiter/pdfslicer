@@ -32,7 +32,7 @@ split:
 latex: header
 	touch ${OUTFILE}.tex
 	cat ${HEADERFILE} >> ${OUTFILE}.tex
-	./gen_latex.sh ${PAGESFILE} ${SPLITBASE} >> ${OUTFILE}.tex
+	python3 gen_latex.py --pages=${PAGESFILE}  --base=${SPLITBASE} >> ${OUTFILE}.tex
 	cat ${FOOTERFILE} >> ${OUTFILE}.tex
 
 
