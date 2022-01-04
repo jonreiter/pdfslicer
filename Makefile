@@ -31,7 +31,7 @@ split:
 
 latex: header
 	touch ${OUTFILE}.tex
-	cat ${HEADERFILE} >> ${OUTFILE}.tex
+	python3 gen_header.py --out=${OUTFILE}.tex
 	python3 gen_latex.py --pages=${PAGESFILE}  --base=${SPLITBASE} >> ${OUTFILE}.tex
 	cat ${FOOTERFILE} >> ${OUTFILE}.tex
 
